@@ -18,6 +18,7 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
 import org.apache.felix.framework.Felix;
+import org.apache.felix.main.AutoProcessor;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.BundleException;
 import org.osgi.framework.FrameworkEvent;
@@ -62,6 +63,8 @@ public class OSGiServletContextListener implements ServletContextListener {
 		final Map<String, Object> configuration = createFrameworkConfiguration(servletContext);
 		framework = new Felix(configuration);
 		framework.init();
+		// Evaluate Auto-install/auto-start properties
+        AutoProcessor.process(configuration, framework.getBundleContext());
 		framework.start();
 		registerBundleContext(servletContext);
 		servletContext.log("OSGi framework successfully started");
