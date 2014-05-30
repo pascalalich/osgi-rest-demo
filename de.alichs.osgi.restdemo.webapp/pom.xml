@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+	  <groupId>de.alichs.osgi.restdemo</groupId>
+	  <artifactId>de.alichs.osgi.restdemo.parent</artifactId>
+	  <version>0.0.1-SNAPSHOT</version>
+	  <relativePath>../pom.xml</relativePath>
+  </parent>
+  <artifactId>de.alichs.osgi.restdemo.webapp</artifactId>
+  <name>REST API Webapp (WAR)</name>
+  <packaging>war</packaging>
+  
+  <properties>
+    <bundlePath>${basedir}/src/main/webapp/WEB-INF/bundles</bundlePath>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>org.apache.felix.main</artifactId>
+      <version>${osgi.felix.version}</version>
+      <exclusions>
+        <!-- Exclude because the main artifact embeds the framework artifact -->
+      	<exclusion>
+      		<artifactId>org.apache.felix.framework</artifactId>
+      		<groupId>org.apache.felix</groupId>
+      	</exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>org.apache.felix.http.proxy</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.tomcat</groupId>
+      <artifactId>tomcat-servlet-api</artifactId>
+      <version>7.0.0</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+  
+  <build>
+    <plugins>
+      <plugin>
+      	<groupId>org.apache.maven.plugins</groupId>
+      	<artifactId>maven-war-plugin</artifactId>
+      	<configuration>
+      		<webResources>
+      			<resource>
+      				<directory>src/main/webapp</directory>
+   	                <filtering>true</filtering>
+   	                <targetPath>.</targetPath>
+      			</resource>
+      		</webResources>
+      	</configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-clean-plugin</artifactId>
+        <configuration>
+          <filesets>
+            <fileset>
+              <directory>${bundlePath}</directory>
+            </fileset>
+          </filesets>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>copy-bundles</id>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>${project.groupId}</groupId>
+                  <artifactId>de.alichs.osgi.restdemo.feature.osgi</artifactId>
+                  <version>${project.version}</version>
+                  <type>zip</type>
+                </artifactItem>
+				<artifactItem>
+                  <groupId>${project.groupId}</groupId>
+                  <artifactId>de.alichs.osgi.restdemo.feature.impl</artifactId>
+                  <version>${project.version}</version>
+                  <type>zip</type>
+                </artifactItem>
+              </artifactItems>
+              <outputDirectory>${bundlePath}</outputDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
