@@ -13,7 +13,7 @@
     <dependencySet>
       <useProjectArtifact>false</useProjectArtifact>
       <useTransitiveDependencies>true</useTransitiveDependencies>
-      <scope>compile</scope>
+      <scope>runtime</scope>
     </dependencySet>
   </dependencySets>
   

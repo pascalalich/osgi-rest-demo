@@ -14,6 +14,8 @@
 		<osgi.felix.http.version>2.2.1</osgi.felix.http.version>
 		<slf4j.version>1.7.5</slf4j.version>
 		<spring.version>3.2.4.RELEASE</spring.version>
+		<gemini.version>1.0.2.RELEASE</gemini.version>
+		<javax.inject.version>1.0.0</javax.inject.version>
 	</properties>
 
 	<modules>
@@ -102,7 +104,7 @@
 				<version>${osgi.version}</version>
 			</dependency>
 
-			<!-- -->
+			<!-- HTTP / Web -->
 			<dependency>
 				<groupId>org.apache.felix</groupId>
 				<artifactId>org.apache.felix.http.bridge</artifactId>
@@ -124,6 +126,12 @@
 				<version>4.2.0</version>
 				<classifier>all</classifier>
 			</dependency>
+			<dependency>
+				<groupId>org.apache.tomcat</groupId>
+				<artifactId>tomcat-servlet-api</artifactId>
+				<version>7.0.0</version>
+				<scope>provided</scope>
+			</dependency>
 
 			<!-- Logging -->
 			<dependency>
@@ -133,13 +141,50 @@
 			</dependency>
 			<dependency>
 				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-log4j12</artifactId>
+				<artifactId>jcl-over-slf4j</artifactId>
 				<version>${slf4j.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.slf4j</groupId>
-				<artifactId>jcl-over-slf4j</artifactId>
+				<artifactId>log4j-over-slf4j</artifactId>
 				<version>${slf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-simple</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+
+			<!-- Spring / Eclipse Gemini Blueprint -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>org.springframework.web</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>org.springframework.context</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>org.springframework.context.support</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>org.springframework.expression</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.inject</groupId>
+				<artifactId>com.springsource.javax.inject</artifactId>
+				<version>${javax.inject.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.eclipse.gemini</groupId>
+				<artifactId>org.eclipse.gemini.blueprint.extender</artifactId>
+				<version>${gemini.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

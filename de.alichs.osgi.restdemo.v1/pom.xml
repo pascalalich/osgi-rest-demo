@@ -8,6 +8,18 @@
 	</parent>
 	<artifactId>de.alichs.osgi.restdemo.v1</artifactId>
 	<name>REST API Version 1</name>
+	<packaging>bundle</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>org.springframework.context</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat-servlet-api</artifactId>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<plugins>
