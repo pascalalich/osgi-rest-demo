@@ -9,7 +9,18 @@
 	<!-- Export the test Servlet as an OSGi service -->
 	<osgi:service ref="testServlet" interface="javax.servlet.Servlet">
 		<osgi:service-properties>
+			<entry key="alias" value="/test" />
+		</osgi:service-properties>
+	</osgi:service>
+
+	<osgi:service ref="osgiDispatcherServlet" interface="javax.servlet.Servlet">
+		<osgi:service-properties>
 			<entry key="alias" value="/v1" />
 		</osgi:service-properties>
+	</osgi:service>
+
+	<!-- Required for Spring's request scope to work -->
+	<osgi:service id="springRequestContextListener" interface="javax.servlet.ServletRequestListener">
+		<bean class="org.springframework.web.context.request.RequestContextListener" />
 	</osgi:service>
 </beans>
