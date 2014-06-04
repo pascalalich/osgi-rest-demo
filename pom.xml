@@ -20,6 +20,7 @@
 
 	<modules>
 		<module>de.alichs.osgi.restdemo.v1</module>
+		<module>de.alichs.osgi.restdemo.v2</module>
 		<module>de.alichs.osgi.restdemo.feature.osgi</module>
 		<module>de.alichs.osgi.restdemo.feature.impl</module>
 		<module>de.alichs.osgi.restdemo.webapp</module>

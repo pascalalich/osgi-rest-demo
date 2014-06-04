@@ -1,4 +1,4 @@
-package de.alichs.osgi.restdemo.v1;
+package de.alichs.osgi.restdemo.v2;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 @RequestMapping("/")
-public class RestServiceV1 {
-	private final Logger LOG = LoggerFactory.getLogger(RestServiceV1.class);
+public class RestServiceV2 {
+	private final Logger LOG = LoggerFactory.getLogger(RestServiceV2.class);
 
 	@RequestMapping(method = RequestMethod.GET)
 	public @ResponseBody
 	String helloWorld() {
-		LOG.info("helloWorld v1 called");
-		return "Hello World from Spring REST Service V1";
+		LOG.info("helloWorld v2 called");
+		return "Hello World from Spring REST Service V2";
 	}
 }
