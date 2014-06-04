@@ -30,6 +30,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>${project.artifactId}-${bundle.version}</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.felix</groupId>

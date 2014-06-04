@@ -16,6 +16,8 @@
 		<spring.version>3.2.4.RELEASE</spring.version>
 		<gemini.version>1.0.2.RELEASE</gemini.version>
 		<javax.inject.version>1.0.0</javax.inject.version>
+		<maven.build.timestamp.format>yyyyMMdd-HHmm</maven.build.timestamp.format>
+		<bundle.version>${pom.version}-${maven.build.timestamp}</bundle.version>
 	</properties>
 
 	<modules>
@@ -47,6 +49,7 @@
 						<instructions>
 							<Bundle-RequiredExecutionEnvironment>JavaSE-1.7</Bundle-RequiredExecutionEnvironment>
 							<Bundle-ActivationPolicy>lazy</Bundle-ActivationPolicy>
+							<Bundle-Version>${bundle.version}</Bundle-Version>
 						</instructions>
 					</configuration>
 				</plugin>
