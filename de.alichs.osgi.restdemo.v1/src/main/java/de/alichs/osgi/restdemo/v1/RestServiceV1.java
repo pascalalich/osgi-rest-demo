@@ -21,7 +21,7 @@ public class RestServiceV1 {
 	public void simulateTimeConsumingInitialization() {
 		LOG.info("Simulating time consuming initialization...");
 		try {
-			Thread.sleep(20000);
+			Thread.sleep(10000);
 		} catch (InterruptedException e) {
 			LOG.error(e.getMessage(), e);
 		}
