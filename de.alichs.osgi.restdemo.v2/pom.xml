@@ -38,6 +38,7 @@
 				<configuration>
 					<instructions>
 						<Import-Package>javax.servlet.http,*</Import-Package>
+						<Export-Package></Export-Package>
 					</instructions>
 				</configuration>
 			</plugin>
