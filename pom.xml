@@ -22,6 +22,7 @@
 	</properties>
 
 	<modules>
+		<module>de.alichs.osgi.restdemo.api</module>
 		<module>de.alichs.osgi.restdemo.v1</module>
 		<module>de.alichs.osgi.restdemo.v2</module>
 		<module>de.alichs.osgi.restdemo.feature.osgi</module>

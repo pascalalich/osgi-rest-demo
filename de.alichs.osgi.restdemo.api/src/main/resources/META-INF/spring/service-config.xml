@@ -6,17 +6,11 @@
 		http://www.springframework.org/schema/osgi
 		http://www.springframework.org/schema/osgi/spring-osgi.xsd">
 
-	<!-- Export the test Servlet as an OSGi service -->
-	<!-- <osgi:service ref="testServlet" interface="javax.servlet.Servlet">
+	<!-- Export the dispatcher Servlet as an OSGi service -->
+	<osgi:service ref="dispatcherServlet" interface="javax.servlet.Servlet">
 		<osgi:service-properties>
-			<entry key="alias" value="/test" />
+			<entry key="alias" value="/api" />
 		</osgi:service-properties>
-	</osgi:service> -->
-
-	<osgi:service ref="osgiDispatcherServlet" interface="javax.servlet.Servlet">
-		<!-- <osgi:service-properties>
-			<entry key="alias" value="/api/v1" />
-		</osgi:service-properties> -->
 	</osgi:service>
 
 	<!-- Required for Spring's request scope to work -->

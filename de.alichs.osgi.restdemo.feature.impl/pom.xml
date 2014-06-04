@@ -14,6 +14,11 @@
 		<!-- All implementation bundles -->
 		<dependency>
 			<groupId>${project.groupId}</groupId>
+			<artifactId>de.alichs.osgi.restdemo.api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>de.alichs.osgi.restdemo.v1</artifactId>
 			<version>${project.version}</version>
 		</dependency>

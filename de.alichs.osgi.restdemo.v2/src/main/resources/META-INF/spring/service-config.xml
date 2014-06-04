@@ -7,9 +7,9 @@
 		http://www.springframework.org/schema/osgi/spring-osgi.xsd">
 
 	<osgi:service ref="osgiDispatcherServlet" interface="javax.servlet.Servlet">
-		<osgi:service-properties>
+		<!-- <osgi:service-properties>
 			<entry key="alias" value="/api/v2" />
-		</osgi:service-properties>
+		</osgi:service-properties> -->
 	</osgi:service>
 
 	<!-- Required for Spring's request scope to work -->
