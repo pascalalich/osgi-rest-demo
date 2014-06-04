@@ -1,5 +1,7 @@
 package de.alichs.osgi.restdemo.v1;
 
+import javax.annotation.PostConstruct;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -15,6 +17,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class RestServiceV1 {
 	private final Logger LOG = LoggerFactory.getLogger(RestServiceV1.class);
 
+//	@PostConstruct
+//	public void simulateTimeConsumingInitialization() {
+//		try {
+//			Thread.sleep(10000);
+//		} catch (InterruptedException e) {
+//			LOG.error(e.getMessage(), e);
+//		}
+//	}
+	
 	@RequestMapping(method = RequestMethod.GET)
 	public @ResponseBody
 	String helloWorld() {

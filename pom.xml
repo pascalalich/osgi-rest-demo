@@ -12,6 +12,7 @@
 		<osgi.version>4.3.1</osgi.version>
 		<osgi.felix.version>4.2.1</osgi.felix.version>
 		<osgi.felix.http.version>2.2.1</osgi.felix.http.version>
+		<osgi.felix.fileinstall.version>3.2.6</osgi.felix.fileinstall.version>
 		<slf4j.version>1.7.5</slf4j.version>
 		<spring.version>3.2.4.RELEASE</spring.version>
 		<gemini.version>1.0.2.RELEASE</gemini.version>
@@ -106,6 +107,11 @@
 				<groupId>org.osgi</groupId>
 				<artifactId>org.osgi.core</artifactId>
 				<version>${osgi.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>org.apache.felix.fileinstall</artifactId>
+				<version>${osgi.felix.fileinstall.version}</version>
 			</dependency>
 
 			<!-- HTTP / Web -->
